@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular Home 1`] = `
+"<ScrollView style={{...}}>
+  <Text style={{...}}>
+    Swift Repository
+  </Text>
+  <View>
+    <Histogram histogram={[undefined]} />
+    <View style={{...}}>
+      <View style={{...}}>
+        <CustomButton text="2021" onPress={[Function: onPress]} />
+      </View>
+      <View style={{...}}>
+        <CustomButton text="2022" onPress={[Function: onPress]} />
+      </View>
+      <View style={{...}}>
+        <CustomButton text="2023" onPress={[Function: onPress]} />
+      </View>
+    </View>
+    <View style={{...}}>
+      <CustomButton data-testid="list" text="Show List" onPress={[Function: onPress]} />
+    </View>
+  </View>
+</ScrollView>"
+`;

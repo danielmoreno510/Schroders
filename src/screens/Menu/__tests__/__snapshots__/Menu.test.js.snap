@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular Menu 1`] = `
+"<RCTSafeAreaView style={{...}}>
+  <ScrollView>
+    <View style={{...}}>
+      <TouchableOpacity style={{...}} onPress={[Function (anonymous)]}>
+        <View style={{...}}>
+          <Component type="Ionicons" name="home" />
+          <Text style={{...}}>
+            Home
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+    <View style={{...}}>
+      <TouchableOpacity style={{...}} onPress={[Function (anonymous)]}>
+        <View style={{...}}>
+          <Component type="Ionicons" name="git-commit" />
+          <Text style={{...}}>
+            Commit List
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+    <View style={{...}}>
+      <TouchableOpacity style={{...}} onPress={[Function (anonymous)]}>
+        <View style={{...}}>
+          <Component type="Ionicons" name="ios-information-circle" />
+          <Text style={{...}}>
+            About
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  </ScrollView>
+</RCTSafeAreaView>"
+`;

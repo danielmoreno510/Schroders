@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular Navigation 1`] = `
+"<ForwardRef(NavigationContainer)>
+  <RCTSafeAreaView style={{...}}>
+    <StackNavigator headerMode="screen" screenOptions={{...}}>
+      <Screen name="Home" component={[Function (anonymous)]} options={[Function: headerMenu]} />
+      <Screen name="Commit List" component={[Function (anonymous)]} options={[Function: headerClose]} />
+      <Screen name="Details" component={[Function (anonymous)]} />
+      <Screen name="Menu" component={[Function: Menu]} options={[Function: options]} />
+      <Screen name="About" component={[Function: About]} options={[Function: headerClose]} />
+    </StackNavigator>
+  </RCTSafeAreaView>
+</ForwardRef(NavigationContainer)>"
+`;

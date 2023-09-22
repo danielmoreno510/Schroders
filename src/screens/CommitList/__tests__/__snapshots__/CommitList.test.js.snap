@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommitList component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular CommitList 1`] = `
+"<View style={{...}}>
+  <FlatList data={{...}} renderItem={[Function: renderItem]} keyExtractor={[Function: keyExtractor]} showsVerticalScrollIndicator={false} />
+</View>"
+`;
