@@ -51,7 +51,7 @@ const Home: React.FC<IHomeProps> = ({
           </View>
         </View>
       ) : (
-        <Spinner color={primaryColor} />
+        <Spinner style={styles.spinner} color={primaryColor} size="lg" />
       )}
     </ScrollView>
   );

@@ -1,3 +1,5 @@
+import { InfoOutlineIcon, PlayIcon, ShareIcon } from "native-base";
+
 // Service
 export const API_URL = 'https://api.github.com/search';
 export const API_TOKEN = ''; // <-- Github token Here
@@ -10,20 +12,20 @@ export const secondaryColor = '#f1b34f';
 export const menuOptions = [
   {
     name: 'Home',
-    icon: 'home',
+    icon: PlayIcon,
   },
   {
     name: 'Commit List',
-    icon: 'git-commit',
+    icon: ShareIcon,
   },
   {
     name: 'About',
-    icon: 'ios-information-circle',
+    icon: InfoOutlineIcon,
   },
 ];
 
 export const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-export const GRAPH_MARGIN = 22;
+export const GRAPH_MARGIN = 26;
 export const GRAPH_BAR_WIDTH = 5;
 export const COLORS = { axis: primaryColor,  bars: secondaryColor };

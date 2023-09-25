@@ -7,10 +7,16 @@ export default StyleSheet.create({
     padding: widthPercentageToDP('5%'),
     backgroundColor: 'white',
   },
+
   title: {
     fontSize: 28,
     fontWeight: 'bold',
   },
+
+  spinner: {
+    marginTop: 32,
+  },
+
   button: {
     marginTop: 40,
     marginBottom: 40,

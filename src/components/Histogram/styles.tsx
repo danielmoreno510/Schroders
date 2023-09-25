@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 12,
   },
 
   titleContainer: {

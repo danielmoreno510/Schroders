@@ -1,19 +1,15 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import {Icon} from 'native-base';
+import {CloseIcon, HamburgerIcon} from 'native-base';
 
 import styles from './styles';
+import { primaryColor } from '../../constants';
 
-const HeaderOptions: React.FC<HeaderOptionsProps> = ({
-  changeScreen,
-  isMenu,
-}) => (
-  <TouchableOpacity onPress={changeScreen} style={styles.headerLeftContainer}>
-    <Icon
-      type="MaterialIcons"
-      name={isMenu ? 'close' : 'menu'}
-      style={styles.iconColor}
-    />
+const HeaderOptions: React.FC<HeaderOptionsProps> = ({changeScreen, isMenu}) => (
+  <TouchableOpacity
+    onPress={changeScreen}
+    style={styles.headerLeftContainer}>
+      {isMenu ? <CloseIcon size="5" color={primaryColor} /> : <HamburgerIcon size="6" color={primaryColor} />}
   </TouchableOpacity>
 );
 

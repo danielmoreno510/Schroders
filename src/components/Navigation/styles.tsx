@@ -1,16 +1,11 @@
 import {StyleSheet} from 'react-native';
 
-import {primaryColor} from '../../constants';
-
 export default StyleSheet.create({
   container: {
     flex: 1,
   },
   headerLeftContainer: {
     marginLeft: 12,
-  },
-  iconColor: {
-    color: primaryColor,
   },
   badge: {
     marginBottom: -12,

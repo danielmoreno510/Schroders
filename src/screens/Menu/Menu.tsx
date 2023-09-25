@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-  Text,
-} from 'react-native';
-import {Icon} from 'native-base';
+import {SafeAreaView, ScrollView, TouchableOpacity, View, Text} from 'react-native';
 
 import styles from './styles';
 import {menuOptions} from '../../constants';
@@ -19,11 +12,9 @@ const Menu: React.FC<Navigation> = ({navigation}) => {
       <ScrollView>
         {menuOptions.map(option => (
           <View key={option.name} style={styles.optionContainer}>
-            <TouchableOpacity
-              style={styles.option}
-              onPress={changeScreeen(option.name)}>
+            <TouchableOpacity style={styles.option} onPress={changeScreeen(option.name)}>
               <View style={styles.rowContainer}>
-                <Icon type="Ionicons" name={option.icon} />
+                <option.icon />
                 <Text style={styles.textOption}>{option.name}</Text>
               </View>
             </TouchableOpacity>

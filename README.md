@@ -6,7 +6,7 @@ https://github.com/danielmoreno510/Schroders/assets/6754040/83564a9c-15e8-42b1-b
 
 
 ## Run the project:
-- `npm install`
+- `npm install --legacy-peer-deps `
 
 ### IOS
 

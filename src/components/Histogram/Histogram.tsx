@@ -3,9 +3,8 @@ import {Text, View} from 'react-native';
 
 import styles from './styles';
 import {widthPercentageToDP} from '../../utils/responsiveUtils';
-import {secondaryColor} from '../../constants';
+import {primaryColor, secondaryColor} from '../../constants';
 import SvgHistogram from './SvgHistogram';
-import Button from '../common/Button';
 import {Switch} from 'native-base';
 
 const Histogram: React.FC<IHistogramProps> = ({histogram, total}) => {
@@ -15,7 +14,7 @@ const Histogram: React.FC<IHistogramProps> = ({histogram, total}) => {
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.text}>Commits Histogram</Text>
-        <Switch value={libraryHistogram} onValueChange={() => setLibraryHistogram(!libraryHistogram)} />
+        <Switch onTrackColor={primaryColor} isChecked={libraryHistogram} onToggle={() => setLibraryHistogram(!libraryHistogram)} />
       </View>
       {libraryHistogram ? (
         <SvgHistogram data={histogram} total={total} />

@@ -25,7 +25,7 @@ const SvgHistogram: React.FC<ISvgHistogramProps> = ({data, total}) => {
   return (
     <Svg width={SVGWidth} height={SVGHeight}>
       <G y={graphHeight + GRAPH_MARGIN}>
-        <Text x={graphWidth - 18} textAnchor="end" y={y(topValue) * -1 - 10} fontSize={14} fill="black" fillOpacity={0.4}> {total} </Text>
+        <Text x={graphWidth - 4} textAnchor="end" y={y(topValue) * -1 - 10} fontSize={14} fill="black" fillOpacity={0.4}> {total} </Text>
 
         <Line x1="0" y1={y(topValue) * -1} x2={graphWidth} y2={y(topValue) * -1} stroke={COLORS.axis} strokeDasharray={[3, 3]} strokeWidth="0.5" />
         <Line x1="0" y1={y(middleValue) * -1} x2={graphWidth} y2={y(middleValue) * -1} stroke={COLORS.axis} strokeDasharray={[3, 3]} strokeWidth="0.5" />
@@ -36,10 +36,10 @@ const SvgHistogram: React.FC<ISvgHistogramProps> = ({data, total}) => {
         ))}
 
         {data.map(item => (
-          <>
-            <Text key={'label' + item.label} fontSize="9" x={x(item.label)} y="11" textAnchor="middle"> {item.label} </Text>
-            <Text key={item.label} fontSize="7" x={x(item.label)} y="21" textAnchor="middle"> {item.value} </Text>
-          </>
+          <Svg key={item.label}>
+            <Text fontSize="9" x={x(item.label)} y="12" textAnchor="middle"> {item.label} </Text>
+            <Text fontSize="7" x={x(item.label)} y="21" textAnchor="middle"> {item.value} </Text>
+          </Svg>
         ))}
       </G>
     </Svg>
