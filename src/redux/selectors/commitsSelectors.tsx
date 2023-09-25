@@ -22,23 +22,23 @@ export const getHistogramData = createSelector(
     ];
 
     const histogramData = [
-      {label: 'January', value: 0, size: 0},
-      {label: 'Febrary', value: 0, size: 0},
-      {label: 'March', value: 0, size: 0},
-      {label: 'April', value: 0, size: 0},
-      {label: 'May', value: 0, size: 0},
-      {label: 'June', value: 0, size: 0},
-      {label: 'July', value: 0, size: 0},
-      {label: 'August', value: 0, size: 0},
-      {label: 'September', value: 0, size: 0},
-      {label: 'October', value: 0, size: 0},
-      {label: 'November', value: 0, size: 0},
-      {label: 'December', value: 0, size: 0},
+      {name: 'January', label: 'Jan', value: 0, size: 0},
+      {name: 'Febrary', label: 'Feb', value: 0, size: 0},
+      {name: 'March', label: 'Mar', value: 0, size: 0},
+      {name: 'April', label: 'Apr', value: 0, size: 0},
+      {name: 'May', label: 'May', value: 0, size: 0},
+      {name: 'June', label: 'Jun', value: 0, size: 0},
+      {name: 'July', label: 'Jul', value: 0, size: 0},
+      {name: 'August', label: 'Aug', value: 0, size: 0},
+      {name: 'September',label: 'Sep', value: 0, size: 0},
+      {name: 'October', label: 'Oct', value: 0, size: 0},
+      {name: 'November', label: 'Nov', value: 0, size: 0},
+      {name: 'December', label: 'Dec', value: 0, size: 0},
     ];
 
     commitList.forEach(commit => {
       const month = months[new Date(commit.created_at).getMonth()];
-      const currentData = histogramData.find(({label}) => label === month)!;
+      const currentData = histogramData.find(({name}) => name === month)!;
       currentData.value = currentData.value + 1;
     });
 

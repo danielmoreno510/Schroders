@@ -24,6 +24,10 @@ export const menuOptions = [
 
 export const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
+export const GRAPH_MARGIN = 22;
+export const GRAPH_BAR_WIDTH = 5;
+export const COLORS = { axis: primaryColor,  bars: secondaryColor };
+
 export const mockCommits: ICommit[] = [
   {
     id: 1,

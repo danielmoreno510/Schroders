@@ -13,6 +13,7 @@ export default StyleSheet.create({
   },
   button: {
     marginTop: 40,
+    marginBottom: 40,
   },
 
   yearContainer: {

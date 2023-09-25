@@ -5,7 +5,7 @@ import {Spinner} from 'native-base';
 import Button from '../../components/common/Button';
 import styles from './styles';
 import {primaryColor} from '../../constants';
-import Histogram from '../../components/common/Histogram';
+import Histogram from '../../components/Histogram';
 
 const Home: React.FC<IHomeProps> = ({
   isFetchingCommitList,

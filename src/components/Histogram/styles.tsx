@@ -5,8 +5,14 @@ export default StyleSheet.create({
     paddingTop: 20,
   },
 
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 24,
+    justifyContent: 'space-between'
+  },
+
   text: {
-    paddingBottom: 12,
     fontSize: 18,
     textAlign: 'justify',
   },
