@@ -8,7 +8,7 @@ import SvgHistogram from './SvgHistogram';
 import Button from '../common/Button';
 import {Switch} from 'native-base';
 
-const Histogram: React.FC<IHistogramProps> = ({histogram}) => {
+const Histogram: React.FC<IHistogramProps> = ({histogram, total}) => {
   const [libraryHistogram, setLibraryHistogram] = useState(true);
 
   return (
@@ -18,7 +18,7 @@ const Histogram: React.FC<IHistogramProps> = ({histogram}) => {
         <Switch value={libraryHistogram} onValueChange={() => setLibraryHistogram(!libraryHistogram)} />
       </View>
       {libraryHistogram ? (
-        <SvgHistogram data={histogram} />
+        <SvgHistogram data={histogram} total={total} />
       ) : (
         histogram.map(data => (
           <View key={data.name} style={styles.rowContainer}>

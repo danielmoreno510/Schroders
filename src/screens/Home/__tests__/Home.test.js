@@ -7,6 +7,7 @@ describe('Home component', () => {
   describe('GIVEN a set of valid props', () => {
     const testProps = {
       isFetchingCommitList: false,
+      commitList: [],
       navigation: {navigate: jest.fn()},
     };
 

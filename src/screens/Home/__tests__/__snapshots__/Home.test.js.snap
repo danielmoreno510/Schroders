@@ -6,7 +6,7 @@ exports[`Home component GIVEN a set of valid props WHEN the component is rendere
     Swift Repository
   </Text>
   <View>
-    <Histogram histogram={[undefined]} />
+    <Histogram histogram={[undefined]} total={0} />
     <View style={{...}}>
       <View style={{...}}>
         <CustomButton text="2021" onPress={[Function: onPress]} />

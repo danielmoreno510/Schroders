@@ -9,6 +9,7 @@ import Histogram from '../../components/Histogram';
 
 const Home: React.FC<IHomeProps> = ({
   isFetchingCommitList,
+  commitList,
   histogramData,
   year,
   getCommits,
@@ -23,7 +24,7 @@ const Home: React.FC<IHomeProps> = ({
       <Text style={styles.title}>Swift Repository</Text>
       {!isFetchingCommitList ? (
         <View>
-          <Histogram histogram={histogramData} />
+          <Histogram histogram={histogramData} total={commitList.length} />
           <View style={styles.yearContainer}>
             {year !== '2021' && (
               <View style={styles.year}>

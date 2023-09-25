@@ -1,15 +1,17 @@
 /* eslint-disable */
 interface IHistogramProps {
   histogram: IHistogramData[];
+  total: number;
 }
 
 interface IHistogramData {
-    name: string;
+  name: string;
   label: string;
   value: number;
   size: number;
 }
 
 interface ISvgHistogramProps {
-    data: IHistogramData[];
-  }
+  data: IHistogramData[];
+  total: number;
+}

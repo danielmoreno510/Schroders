@@ -23,7 +23,7 @@ export const getHistogramData = createSelector(
 
     const histogramData = [
       {name: 'January', label: 'Jan', value: 0, size: 0},
-      {name: 'Febrary', label: 'Feb', value: 0, size: 0},
+      {name: 'February', label: 'Feb', value: 0, size: 0},
       {name: 'March', label: 'Mar', value: 0, size: 0},
       {name: 'April', label: 'Apr', value: 0, size: 0},
       {name: 'May', label: 'May', value: 0, size: 0},

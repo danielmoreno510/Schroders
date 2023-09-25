@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import {heightPercentageToDP, widthPercentageToDP} from '../../utils/responsiveUtils';
 import { GRAPH_BAR_WIDTH, GRAPH_MARGIN, COLORS } from '../../constants';
 
-const SvgHistogram: React.FC<ISvgHistogramProps> = ({data}) => {
+const SvgHistogram: React.FC<ISvgHistogramProps> = ({data, total}) => {
   const SVGHeight = heightPercentageToDP('40%');
   const SVGWidth = '100%';
   const graphHeight = SVGHeight - 2 * GRAPH_MARGIN;
@@ -25,7 +25,7 @@ const SvgHistogram: React.FC<ISvgHistogramProps> = ({data}) => {
   return (
     <Svg width={SVGWidth} height={SVGHeight}>
       <G y={graphHeight + GRAPH_MARGIN}>
-        <Text x={graphWidth - 18} textAnchor="end" y={y(topValue) * -1 - 10} fontSize={14} fill="black" fillOpacity={0.4}> {data.length} </Text>
+        <Text x={graphWidth - 18} textAnchor="end" y={y(topValue) * -1 - 10} fontSize={14} fill="black" fillOpacity={0.4}> {total} </Text>
 
         <Line x1="0" y1={y(topValue) * -1} x2={graphWidth} y2={y(topValue) * -1} stroke={COLORS.axis} strokeDasharray={[3, 3]} strokeWidth="0.5" />
         <Line x1="0" y1={y(middleValue) * -1} x2={graphWidth} y2={y(middleValue) * -1} stroke={COLORS.axis} strokeDasharray={[3, 3]} strokeWidth="0.5" />

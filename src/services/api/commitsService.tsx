@@ -1,4 +1,5 @@
-import { API_TOKEN, mockCommits } from '../../constants';
+import { API_TOKEN } from '../../constants';
+import { mockCommits } from '../../utils/mockUtils';
 import http from '../http';
 
 export const getCommits = async (
@@ -36,7 +37,7 @@ export const getCommits = async (
     concatData = {...concatData, items: [...concatData.items, ...data.items]};
   }
   
-  // return {...concatData, items: [...concatData.items, ...mockCommits]} // With mock data
+  // return {...concatData, items: mockCommits()} // With mock data
 
   return concatData;
 };

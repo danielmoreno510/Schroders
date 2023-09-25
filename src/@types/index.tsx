@@ -11,6 +11,7 @@ type Navigate = {
 
 interface IHomeProps {
   isFetchingCommitList: boolean;
+  commitList: ICommit[];
   histogramData: IHistogramData[];
   year: string;
   getCommits: (year: string) => void;
