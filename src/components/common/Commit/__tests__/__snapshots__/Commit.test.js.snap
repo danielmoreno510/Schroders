@@ -7,7 +7,7 @@ exports[`Commit component GIVEN a set of valid props WHEN the component is rende
   </Text>
   <Text style={{...}}>
     Date: 
-    2023-09-22
+    2023-09-25
   </Text>
   <TouchableOpacity testID="showCommit" onPress={[Function: onPress]} style={{...}}>
     <Text style={{...}}>

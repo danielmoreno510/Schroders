@@ -1,3 +1,4 @@
+import { API_TOKEN, mockCommits } from '../../constants';
 import http from '../http';
 
 export const getCommits = async (
@@ -26,12 +27,16 @@ export const getCommits = async (
   //   concatData = {...concatData, items: [...concatData.items, ...data.items]};
   // }
 
-  for (let page = 0; page < 10; page++) {
+  let pages = API_TOKEN ? 10 : 1
+
+  for (let i = 0; i < pages; i++) {
     const {data} = await http.get(
-      `/issues?page=${page}&per_page=100&q=is:merged%20merged:%3C${year}-12-30%20repo:apple/swift`,
+      `/issues?page=${i}&per_page=100&q=is:merged%20merged:%3C${year}-12-30%20repo:apple/swift`,
     );
     concatData = {...concatData, items: [...concatData.items, ...data.items]};
   }
+  
+  // return {...concatData, items: [...concatData.items, ...mockCommits]} // With mock data
 
   return concatData;
 };
