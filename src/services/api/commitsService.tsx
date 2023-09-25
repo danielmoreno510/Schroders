@@ -1,5 +1,6 @@
-import { API_TOKEN } from '../../constants';
-import { mockCommits } from '../../utils/mockUtils';
+import {API_TOKEN} from '../../constants';
+/* eslint-disable */
+import {mockCommits} from '../../utils/mockUtils';
 import http from '../http';
 
 export const getCommits = async (
@@ -28,7 +29,7 @@ export const getCommits = async (
   //   concatData = {...concatData, items: [...concatData.items, ...data.items]};
   // }
 
-  let pages = API_TOKEN ? 10 : 1
+  let pages = API_TOKEN ? 10 : 1;
 
   for (let i = 0; i < pages; i++) {
     const {data} = await http.get(
@@ -36,7 +37,7 @@ export const getCommits = async (
     );
     concatData = {...concatData, items: [...concatData.items, ...data.items]};
   }
-  
+
   // return {...concatData, items: mockCommits()} // With mock data
 
   return concatData;

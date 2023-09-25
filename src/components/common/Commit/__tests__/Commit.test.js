@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import Commit from '../Commit';
 
@@ -11,10 +11,10 @@ describe('Commit component', () => {
     };
 
     describe('WHEN the component is rendered', () => {
-      const shallowWrapper = shallow(<Commit {...testProps} />);
+      const testRenderer = TestRenderer.create(<Commit {...testProps} />);
 
       it('THEN should display a regular Commit', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
   });

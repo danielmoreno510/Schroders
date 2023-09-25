@@ -1,4 +1,6 @@
 import {createSelector} from 'reselect';
+import {histogramData as data} from '../../constants';
+import {cloneDeep} from 'lodash';
 
 const selectCommitList = (state: ICommitListStateProps) =>
   state.commits.commitList!;
@@ -21,20 +23,7 @@ export const getHistogramData = createSelector(
       'December',
     ];
 
-    const histogramData = [
-      {name: 'January', label: 'Jan', value: 0, size: 0},
-      {name: 'February', label: 'Feb', value: 0, size: 0},
-      {name: 'March', label: 'Mar', value: 0, size: 0},
-      {name: 'April', label: 'Apr', value: 0, size: 0},
-      {name: 'May', label: 'May', value: 0, size: 0},
-      {name: 'June', label: 'Jun', value: 0, size: 0},
-      {name: 'July', label: 'Jul', value: 0, size: 0},
-      {name: 'August', label: 'Aug', value: 0, size: 0},
-      {name: 'September',label: 'Sep', value: 0, size: 0},
-      {name: 'October', label: 'Oct', value: 0, size: 0},
-      {name: 'November', label: 'Nov', value: 0, size: 0},
-      {name: 'December', label: 'Dec', value: 0, size: 0},
-    ];
+    const histogramData = cloneDeep(data);
 
     commitList.forEach(commit => {
       const month = months[new Date(commit.created_at).getMonth()];
@@ -44,7 +33,9 @@ export const getHistogramData = createSelector(
 
     const maxData = Math.max(...histogramData.map(data => data.value));
     histogramData.forEach(data => {
-      data.size = data.value / (maxData / 100) - 10;
+      if (data.value > 0) {
+        data.size = data.value / (maxData / 100) - 10;
+      }
     });
 
     return histogramData;

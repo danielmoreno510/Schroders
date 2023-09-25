@@ -2,6 +2,8 @@
 interface IHistogramProps {
   histogram: IHistogramData[];
   total: number;
+  isLibrary: boolean;
+  changeChart: () => void;
 }
 
 interface IHistogramData {

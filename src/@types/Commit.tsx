@@ -27,6 +27,7 @@ interface ICommitInitialState {
   isFetchingCommitDetails?: boolean;
   commit?: ICommit | null;
   year?: string;
+  isLibrary?: boolean;
 }
 
 interface ICommitReducer {
@@ -34,6 +35,7 @@ interface ICommitReducer {
   commit?: ICommit;
   commitList?: ICommit[];
   year?: string;
+  isLibrary?: boolean;
 }
 
 interface ICommitListStateProps {

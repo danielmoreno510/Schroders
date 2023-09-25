@@ -11,29 +11,42 @@ import RepositoryDetails from '../../screens/CommitDetails';
 import About from '../../screens/About';
 import styles from './styles';
 import {primaryColor} from '../../constants';
-import { NativeBaseProvider } from 'native-base';
 
 const Stack = createStackNavigator();
-const screenOptions = {headerStyle: {shadowColor: primaryColor}, headerTintColor: primaryColor};
+const screenOptions = {
+  headerStyle: {shadowColor: primaryColor},
+  headerTintColor: primaryColor,
+};
 
 const Navigation: React.FC = () => {
   const headerClose = ({navigation}: Navigation) => ({
     headerLeft: () => (
-      <HeaderOptions changeScreen={() => navigation.navigate('Home')} isMenu={true} />
+      <HeaderOptions
+        changeScreen={() => navigation.navigate('Home')}
+        isMenu={true}
+      />
     ),
   });
 
   const headerMenu = ({navigation}: any) => ({
-    headerLeft: () => <HeaderOptions changeScreen={() => navigation.navigate('Menu')} isMenu={false} />,
+    headerLeft: () => (
+      <HeaderOptions
+        changeScreen={() => navigation.navigate('Menu')}
+        isMenu={false}
+      />
+    ),
   });
 
   return (
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
-      <NativeBaseProvider>
         <Stack.Navigator headerMode="screen" screenOptions={screenOptions}>
           <Stack.Screen name="Home" component={Home} options={headerMenu} />
-          <Stack.Screen name="Commit List" component={CommitList} options={headerClose} />
+          <Stack.Screen
+            name="Commit List"
+            component={CommitList}
+            options={headerClose}
+          />
           <Stack.Screen name="Details" component={RepositoryDetails} />
           <Stack.Screen
             name="Menu"
@@ -45,7 +58,6 @@ const Navigation: React.FC = () => {
           />
           <Stack.Screen name="About" component={About} options={headerClose} />
         </Stack.Navigator>
-        </NativeBaseProvider>
       </SafeAreaView>
     </NavigationContainer>
   );

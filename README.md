@@ -6,7 +6,7 @@ https://github.com/danielmoreno510/Schroders/assets/6754040/83564a9c-15e8-42b1-b
 
 
 ## Run the project:
-- `npm install --legacy-peer-deps `
+- `npm install`
 
 ### IOS
 
@@ -31,8 +31,8 @@ To get more data you need to put a github token, you can also get mock data
 ### To run the unit tests:
 - `npm run test`
 
-### To run the unit coverage (76%):
-- `npm run test -- --coverage`
+### To run the unit coverage (88%):
+- `npm run coverage`
 
 To see the coverage, run the index.html file found in: `coverage/lcov-report/`
 

@@ -1,22 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 
 import styles from './styles';
 import {widthPercentageToDP} from '../../utils/responsiveUtils';
-import {primaryColor, secondaryColor} from '../../constants';
+import {INSET, primaryColor, secondaryColor} from '../../constants';
 import SvgHistogram from './SvgHistogram';
-import {Switch} from 'native-base';
+import {NativeBaseProvider, Switch} from 'native-base';
 
-const Histogram: React.FC<IHistogramProps> = ({histogram, total}) => {
-  const [libraryHistogram, setLibraryHistogram] = useState(true);
-
-  return (
+const Histogram: React.FC<IHistogramProps> = ({
+  histogram,
+  total,
+  isLibrary,
+  changeChart,
+}) => (
+  <NativeBaseProvider initialWindowMetrics={INSET}>
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.text}>Commits Histogram</Text>
-        <Switch onTrackColor={primaryColor} isChecked={libraryHistogram} onToggle={() => setLibraryHistogram(!libraryHistogram)} />
+        <Switch
+          onTrackColor={primaryColor}
+          isChecked={isLibrary}
+          onToggle={changeChart}
+        />
       </View>
-      {libraryHistogram ? (
+      {isLibrary ? (
         <SvgHistogram data={histogram} total={total} />
       ) : (
         histogram.map(data => (
@@ -43,7 +50,7 @@ const Histogram: React.FC<IHistogramProps> = ({histogram, total}) => {
         ))
       )}
     </View>
-  );
-};
+  </NativeBaseProvider>
+);
 
 export default Histogram;

@@ -1,25 +1,24 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import Navigation from '../Navigation';
 
 describe('Navigation component', () => {
-  describe('GIVEN a set of valid props', () => {
-    const testProps = {
-      cart: [],
-    };
+  describe('WHEN the component is rendered', () => {
+    const testRenderer = TestRenderer.create(<Navigation />);
+    const testInstance = testRenderer.root;
 
-    describe('WHEN the component is rendered', () => {
-      const shallowWrapper = shallow(<Navigation {...testProps} />);
-      shallowWrapper
-        .find('Screen')
-        .at(0)
-        .props()
-        .options({navigation: jest.fn()});
+    testInstance
+      .findByProps({testID: 'Home'})
+      .props.options(jest.fn())
+      .headerLeft();
+    testInstance
+      .findByProps({testID: 'Menu'})
+      .props.options(jest.fn())
+      .headerLeft();
 
-      it('THEN should display a regular Navigation', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
-      });
+    it('THEN should display a regular Navigation', () => {
+      expect(testRenderer.toJSON()).toMatchSnapshot();
     });
   });
 });

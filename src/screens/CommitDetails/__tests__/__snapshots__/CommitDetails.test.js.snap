@@ -1,19 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CommitDetails component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular CommitDetails 1`] = `
-"<View style={{...}}>
-  <Text style={{...}}>
+<View
+  style={
+    {
+      "backgroundColor": "white",
+      "flex": 1,
+      "padding": 37.5,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "marginTop": 24,
+      }
+    }
+  >
     Title: 
   </Text>
-  <Text style={{...}}>
+  <Text
+    style={
+      {
+        "marginTop": 24,
+      }
+    }
+  >
     body: 
   </Text>
-  <Text style={{...}}>
+  <Text
+    style={
+      {
+        "marginTop": 24,
+      }
+    }
+  >
     Author: 
   </Text>
-  <Text style={{...}}>
+  <Text
+    style={
+      {
+        "marginTop": 24,
+      }
+    }
+  >
     Date: 
     2023-09-25
   </Text>
-</View>"
+</View>
 `;

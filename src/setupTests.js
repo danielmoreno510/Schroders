@@ -1,9 +1,15 @@
-import Adapter from 'enzyme-adapter-react-16';
-import {configure} from 'enzyme';
+// Optional: configure or set up a testing framework before each test.
+// If you delete this file, remove `setupFilesAfterEnv` from `jest.config.js`
 
-configure({adapter: new Adapter()});
+// Used for __tests__/testing-library.js
+// Learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
 
 /* eslint-disable */
-jest.mock('native-base', () => jest.fn());
-jest.mock('react-native-gesture-handler', () => jest.fn());
-jest.mock('d3', () => jest.fn());
+jest.mock('d3', () => ({
+  scalePoint: () => ({
+    domain: () => ({range: () => ({padding: () => jest.fn()})}),
+  }),
+  max: jest.fn(),
+  scaleLinear: () => ({domain: () => ({range: () => jest.fn()})}),
+}));

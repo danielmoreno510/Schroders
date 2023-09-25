@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import HeaderOptions from '../HeaderOptions';
 
@@ -11,19 +11,23 @@ describe('HeaderOptions component', () => {
     };
 
     describe('WHEN the component is rendered', () => {
-      const shallowWrapper = shallow(<HeaderOptions {...testProps} />);
+      const testRenderer = TestRenderer.create(
+        <HeaderOptions {...testProps} />,
+      );
 
       it('THEN should display a regular HeaderOptions', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
 
     describe('WHEN the component is rendered with badge', () => {
       const customProps = {...testProps, badge: 1, position: 'right'};
-      const shallowWrapper = shallow(<HeaderOptions {...customProps} />);
+      const testRenderer = TestRenderer.create(
+        <HeaderOptions {...customProps} />,
+      );
 
       it('THEN should display a regular HeaderOptions', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
   });

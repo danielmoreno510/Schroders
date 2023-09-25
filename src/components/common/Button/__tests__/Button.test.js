@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import Button from '../Button';
 
@@ -11,10 +11,10 @@ describe('Button component', () => {
     };
 
     describe('WHEN the component is rendered without props', () => {
-      const shallowWrapper = shallow(<Button {...testProps} />);
+      const testRenderer = TestRenderer.create(<Button {...testProps} />);
 
       it('THEN should display a regular button', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
 
@@ -26,10 +26,10 @@ describe('Button component', () => {
         styleButton: {color: 'red'},
         styleText: {color: 'red'},
       };
-      const shallowWrapper = shallow(<Button {...customProps} />);
+      const testRenderer = TestRenderer.create(<Button {...customProps} />);
 
       it('THEN should display a regular button', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
   });

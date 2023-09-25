@@ -1,56 +1,219 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular About 1`] = `
-"<ScrollView style={{...}}>
-  <Text style={{...}}>
-    Schroders
-  </Text>
-  <View style={{...}}>
-    <Text style={{...}}>
-      Technologies
+<RCTScrollView
+  style={
+    {
+      "backgroundColor": "white",
+      "flex": 1,
+      "padding": 37.5,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        {
+          "fontSize": 28,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Schroders
     </Text>
-    <View style={{...}}>
-      <Text style={{...}}>
-        - React Native
+    <View
+      style={
+        {
+          "padding": 4,
+          "paddingHorizontal": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 24,
+          }
+        }
+      >
+        Technologies
       </Text>
-      <Text style={{...}}>
-        - TypeScript
-      </Text>
-      <Text style={{...}}>
-        - Redux - Saga
-      </Text>
-      <Text style={{...}}>
-        - esLint
-      </Text>
-      <Text style={{...}}>
-        - Test (Jest)
-      </Text>
+      <View
+        style={
+          {
+            "padding": 4,
+            "paddingHorizontal": 18,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - React Native
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - TypeScript
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - Redux - Saga
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - esLint
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - Test (Jest)
+        </Text>
+      </View>
     </View>
-  </View>
-  <View style={{...}}>
-    <Text style={{...}}>
-      Tools
+    <View
+      style={
+        {
+          "padding": 4,
+          "paddingHorizontal": 12,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 24,
+          }
+        }
+      >
+        Tools
+      </Text>
+      <View
+        style={
+          {
+            "padding": 4,
+            "paddingHorizontal": 18,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - Reactotron
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - Xcode
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 20,
+            }
+          }
+        >
+          - Prettier
+        </Text>
+      </View>
+    </View>
+    <Text
+      style={
+        {
+          "fontSize": 16,
+          "paddingTop": 8,
+          "textAlign": "justify",
+        }
+      }
+    >
+      This project has a coverage of 76%
     </Text>
-    <View style={{...}}>
-      <Text style={{...}}>
-        - Reactotron
-      </Text>
-      <Text style={{...}}>
-        - Xcode
-      </Text>
-      <Text style={{...}}>
-        - Prettier
-      </Text>
-    </View>
+    <Image
+      source={
+        {
+          "process": [Function],
+        }
+      }
+      style={
+        {
+          "height": 250,
+          "marginBottom": 14,
+          "marginTop": 14,
+          "width": 675,
+        }
+      }
+    />
+    <Text
+      style={
+        {
+          "fontSize": 16,
+          "paddingTop": 8,
+          "textAlign": "justify",
+        }
+      }
+    >
+      In other projects I have implemented continuous integration processes with implementation within appcenter to download the ios and android builds
+    </Text>
+    <Image
+      source={
+        {
+          "process": [Function],
+        }
+      }
+      style={
+        {
+          "height": 250,
+          "marginBottom": 14,
+          "marginTop": 14,
+          "width": 675,
+        }
+      }
+    />
+    <Image
+      source={
+        {
+          "process": [Function],
+        }
+      }
+      style={
+        {
+          "height": 250,
+          "marginBottom": 14,
+          "marginTop": 14,
+          "width": 675,
+        }
+      }
+    />
   </View>
-  <Text style={{...}}>
-    This project has a coverage of 76%
-  </Text>
-  <Image source={{...}} style={{...}} />
-  <Text style={{...}}>
-    In other projects I have implemented continuous integration processes with implementation within appcenter to download the ios and android builds
-  </Text>
-  <Image source={{...}} style={{...}} />
-  <Image source={{...}} style={{...}} />
-</ScrollView>"
+</RCTScrollView>
 `;

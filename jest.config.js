@@ -2,6 +2,7 @@ module.exports = {
   preset: 'react-native',
   setupFilesAfterEnv: ['./src/setupTests.js'],
   transformIgnorePatterns: [
+    /* eslint-disable */
     'node_modules/(?!(@react-native|react-native|native-base-shoutem-theme|@codler|react-native-iphone-x-helper)/)',
   ],
   moduleNameMapper: {
@@ -22,4 +23,6 @@ module.exports = {
     '!src/App.tsx',
     '!src/redux/StoreService.js',
   ],
+  moduleDirectories: ['node_modules', '<rootDir>/'],
+  testEnvironment: 'jest-environment-jsdom',
 };

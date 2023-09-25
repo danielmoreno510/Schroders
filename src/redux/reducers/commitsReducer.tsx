@@ -4,6 +4,7 @@ import {
   FETCH_COMMIT_LIST,
   PUT_COMMIT_LIST,
   PUT_CURRENT_COMMIT,
+  PUT_CHART,
 } from '../actions/types';
 
 export const initialState: ICommitInitialState = {
@@ -11,6 +12,7 @@ export const initialState: ICommitInitialState = {
   commitList: [],
   commit: null,
   year: '',
+  isLibrary: true,
 };
 
 export default (state = initialState, action: ICommitReducer) =>
@@ -21,11 +23,14 @@ export default (state = initialState, action: ICommitReducer) =>
         draft.year = action.year;
         break;
       case PUT_COMMIT_LIST:
-        draft.commitList = [...new Set(action.commitList)];
         draft.isFetchingCommitList = false;
+        draft.commitList = [...new Set(action.commitList)];
         break;
       case PUT_CURRENT_COMMIT:
         draft.commit = action.commit;
+        break;
+      case PUT_CHART:
+        draft.isLibrary = !draft.isLibrary;
         break;
       default:
         break;

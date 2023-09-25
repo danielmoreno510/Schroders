@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import CommitList from '../CommitList';
 
@@ -9,34 +9,51 @@ describe('CommitList component', () => {
   describe('GIVEN a set of valid props', () => {
     const testProps = {
       isFetchingCommitList: true,
-      commitList: [],
-      cart: [{}],
+      commitList: [
+        {
+          id: 1,
+          node_id: '1',
+          title: 'Test 1',
+          user: {login: 'Test', id: '1', avatar_url: ''},
+          comments: 3,
+          created_at: '2022-09-21',
+          body: 'Body 1',
+        },
+      ],
       getCommits: jest.fn(),
       setCurrentCommit: jest.fn(),
       navigation: {navigate: jest.fn()},
     };
 
     describe('WHEN the component is rendered', () => {
-      const shallowWrapper = shallow(<CommitList {...testProps} />);
+      const testRenderer = TestRenderer.create(<CommitList {...testProps} />);
 
       it('THEN should display a regular CommitList', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
 
-    describe('WHEN the addToCart and showCommit functions are called', () => {
+    describe('WHEN showCommit functions are called', () => {
       const customProps = {
         ...testProps,
         isFetchingCommitList: false,
-        commitList: [{}],
+        commitList: [
+          {
+            id: 1,
+            node_id: '1',
+            title: 'Test 1',
+            user: {login: 'Test', id: '1', avatar_url: ''},
+            comments: 3,
+            created_at: '2022-09-21',
+            body: 'Body 1',
+          },
+        ],
       };
-      const shallowWrapper = shallow(<CommitList {...customProps} />);
-      const flatList = shallowWrapper.find('FlatList');
-      const item = flatList.renderProp('renderItem')({});
-      item.props().showCommit();
-      flatList.props().keyExtractor({item: {id: 1}});
+      const testRenderer = TestRenderer.create(<CommitList {...customProps} />);
+      const testInstance = testRenderer.root;
+      testInstance.findByProps({testID: 'showCommit'}).props.onPress();
 
-      it('THEN setAddToCart and setCurrentCommit function should be called', () => {
+      it('THEN setCurrentCommit function should be called', () => {
         expect(testProps.setCurrentCommit).toBeCalledTimes(1);
       });
     });

@@ -24,7 +24,7 @@ export default StyleSheet.create({
 
   yearContainer: {
     flexDirection: 'row',
-    marginTop: 12
+    marginTop: 12,
   },
 
   year: {

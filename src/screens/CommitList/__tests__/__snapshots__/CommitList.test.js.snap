@@ -1,7 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CommitList component GIVEN a set of valid props WHEN the component is rendered THEN should display a regular CommitList 1`] = `
-"<View style={{...}}>
-  <FlatList data={{...}} renderItem={[Function: renderItem]} keyExtractor={[Function: keyExtractor]} showsVerticalScrollIndicator={false} />
-</View>"
+<View
+  style={
+    {
+      "backgroundColor": "white",
+      "flex": 1,
+      "padding": 37.5,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "body": "Body 1",
+          "comments": 3,
+          "created_at": "2022-09-21",
+          "id": 1,
+          "node_id": "1",
+          "title": "Test 1",
+          "user": {
+            "avatar_url": "",
+            "id": "1",
+            "login": "Test",
+          },
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "alignContent": "center",
+              "borderBottomColor": "#f1b30a",
+              "borderBottomWidth": 1,
+              "flex": 1,
+              "justifyContent": "space-between",
+              "padding": 0,
+              "paddingHorizontal": 0,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "flexDirection": "column",
+                "paddingTop": 8,
+              }
+            }
+          >
+            Author: 
+            Test
+          </Text>
+          <Text
+            style={
+              {
+                "flexDirection": "column",
+                "paddingTop": 8,
+              }
+            }
+          >
+            Date: 
+            2022-09-21
+          </Text>
+          <View
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "backgroundColor": "#f1b30a",
+                "borderRadius": 8,
+                "margin": 12,
+                "marginHorizontal": 0,
+                "opacity": 1,
+                "padding": 6,
+                "width": 100,
+              }
+            }
+            testID="showCommit"
+          >
+            <Text
+              style={
+                {
+                  "color": "white",
+                }
+              }
+            >
+              Go To Details
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
 `;

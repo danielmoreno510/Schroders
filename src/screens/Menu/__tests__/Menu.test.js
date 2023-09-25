@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import Menu from '../Menu';
 
@@ -10,16 +10,17 @@ describe('Menu component', () => {
     };
 
     describe('WHEN the component is rendered', () => {
-      const shallowWrapper = shallow(<Menu {...testProps} />);
+      const testRenderer = TestRenderer.create(<Menu {...testProps} />);
 
       it('THEN should display a regular Menu', () => {
-        expect(shallowWrapper.debug()).toMatchSnapshot();
+        expect(testRenderer.toJSON()).toMatchSnapshot();
       });
     });
 
     describe('WHEN the menu option is pressed', () => {
-      const shallowWrapper = shallow(<Menu {...testProps} />);
-      shallowWrapper.find('TouchableOpacity').at(0).simulate('press');
+      const testRenderer = TestRenderer.create(<Menu {...testProps} />);
+      const testInstance = testRenderer.root;
+      testInstance.findByProps({testID: 'Home'}).props.onPress();
 
       it('THEN navigation function should be called', () => {
         expect(testProps.navigation.navigate).toBeCalledTimes(1);
