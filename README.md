@@ -2,7 +2,8 @@
 
 This project was developed with react native (TypeScript)
 
-![alt text](https://raw.githubusercontent.com/danielmoreno510/Schroders/main/images/app.png)
+https://github.com/danielmoreno510/Schroders/assets/6754040/83564a9c-15e8-42b1-b542-60c34c9caaff
+
 
 ## Run the project:
 - `npm install`
@@ -36,10 +37,3 @@ To get more data you need to put a github token, you can also get mock data
 To see the coverage, run the index.html file found in: `coverage/lcov-report/`
 
 ![alt text](https://raw.githubusercontent.com/danielmoreno510/Schroders/main/images/coverage.png)
-
-
-### Demo:
-
-![alt text](https://raw.githubusercontent.com/danielmoreno510/Schroders/main/images/app.mov)
-
-![alt text](https://raw.githubusercontent.com/danielmoreno510/Schroders/main/images/coverage.mov)
